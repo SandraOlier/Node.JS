@@ -1,0 +1,86 @@
+/*Flexbox y Media Queries*/
+html {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+}
+
+header {
+    background-color: cornflowerblue;
+    height: 10vh;
+    display: flex;
+    justify-content: center; /*Centra el contenido horizontalmente*/
+    align-items: center; /*Centra el contenido verticalmente*/
+}
+
+main{
+    height: 80vh;
+}
+
+footer {
+    background-color: darksalmon;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* damos estilos a las cajitas del main*/
+
+
+.container {
+
+    /*Predisponemos el contenedor para que se comporte como un flexbox*/
+    display: flex;
+    flex-direction: row; /*Por defecto es row, pero lo ponemos para tener el control*/
+    flex-wrap: nowrap; /*rompe la formación y permite el reordenamiento multilínea*/
+    justify-content: space-around; /*Distribuye los elementos de manera uniforme*/
+    /* Distribuye los elementos horizontalmente, con espacio entre ellos */
+    /*opciones de distribucion de objetos individuales: flex-start, flex-end, center
+    de distribucion de objetos de filas: space-between, space-around, space-evenly(mismo espacio intro y exter)*/
+    align-items: center; /*Centra los elementos verticalmente*/
+
+    height: 100%;
+    background-color: beige;
+
+}
+
+
+/*Estilos de las cajitas*/
+
+.item {
+    width: 50px;
+    height: 50px;
+    border: 2px solid black;
+    background-color: lightblue;
+    display: flex; /*Predisponemos el contenedor para que se comporte como un flexbox*/
+    justify-content: center; /*Centra el contenido horizontalmente*/
+    align-items: center; /*Centra el contenido verticalmente*/
+}
+
+/*Media Queries para pantallas de hasta 600*/
+
+@media only screen and (max-width: 600px) {
+    .container {
+        flex-direction: column; /*Cambiamos la dirección de los elementos a columna*/
+        background-color: lightseagreen;
+    }
+
+    .item {
+        width: 25%;
+        height: 25%;
+    }
+}
+
+/* de 601 a 768px */
+
+@media only screen and (min-width: 601px) and (max-width: 768px){
+    .container {
+
+        background-color: lightgrey;
+    }
+
+    .item {
+        width: 100px;
+        height: 100px;
+    }
+}
